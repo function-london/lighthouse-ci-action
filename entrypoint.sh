@@ -148,12 +148,12 @@ else
   export SHOPIFY_PASSWORD="$SHOP_APP_PASSWORD"
 fi
 
-shopify login
+###shopify login
 
 host="https://${SHOP_STORE#*(https://|http://)}"
 theme_root="${THEME_ROOT:-.}"
-log "host: $host"
-log "theme $theme_root"
+###log "host: $host"
+###log "theme $theme_root"
 
 # Use the $SHOP_PASSWORD defined as a Github Secret for password protected stores.
 [[ -z ${SHOP_PASSWORD+x} ]] && shop_password='' || shop_password="$SHOP_PASSWORD"
@@ -162,9 +162,11 @@ log "Will run Lighthouse CI on $host"
 
 step "Creating development theme"
 theme_push_log="$(mktemp)"
-shopify theme push --development --json $theme_root > "$theme_push_log" && cat "$theme_push_log"
-preview_url="$(cat "$theme_push_log" | tail -n 1 | jq -r '.theme.preview_url')"
-preview_id="$(cat "$theme_push_log" | tail -n 1 | jq -r '.theme.id')"
+###shopify theme push --development --json $theme_root > "$theme_push_log" && cat "$theme_push_log"
+###preview_url="$(cat "$theme_push_log" | tail -n 1 | jq -r '.theme.preview_url')"
+###preview_id="$(cat "$theme_push_log" | tail -n 1 | jq -r '.theme.id')"
+preview_id="125904814342"
+preview_url="$host/?preview_theme_id=$preview_id"
 log "preview_url: $preview_url"
 log "preview_id: $preview_id" 
 
