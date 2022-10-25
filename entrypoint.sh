@@ -152,8 +152,8 @@ shopify login
 
 host="https://${SHOP_STORE#*(https://|http://)}"
 theme_root="${THEME_ROOT:-.}"
-log "host: $(host)"
-log "theme $(theme_root)"
+log "host: $host"
+log "theme $theme_root"
 
 # Use the $SHOP_PASSWORD defined as a Github Secret for password protected stores.
 [[ -z ${SHOP_PASSWORD+x} ]] && shop_password='' || shop_password="$SHOP_PASSWORD"
