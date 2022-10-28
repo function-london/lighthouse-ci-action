@@ -160,11 +160,12 @@ theme_root="${THEME_ROOT:-.}"
 
 log "Will run Lighthouse CI on $host"
 
-log "theme_id: ${THEME_ID}"
+theme_id=${THEME_ID:-}
+log "theme_id: $theme_id"
 
-if [[ -n "${THEME_ID}"]]; then
-  step "Using existing theme ${THEME_ID}"
-  preview_id="${THEME_ID}"
+if [[ -n "$theme_id"]]; then
+  step "Using existing theme $theme_id"
+  preview_id="$theme_id"
   preview_url="$host/?preview_theme_id=$preview_id"
 else
   step "Creating development theme"
