@@ -161,7 +161,7 @@ theme_root="${THEME_ROOT:-.}"
 
 log "Will run Lighthouse CI on $host"
 
-test=${SHOP_COLLECTION_HANDLE:-}
+test=${1:-}
 log "test: $test"
 
 theme_id=${SHOP_THEME_ID:-}
