@@ -160,13 +160,19 @@ theme_root="${THEME_ROOT:-.}"
 
 log "Will run Lighthouse CI on $host"
 
-step "Creating development theme"
-theme_push_log="$(mktemp)"
-###shopify theme push --development --json $theme_root > "$theme_push_log" && cat "$theme_push_log"
-###preview_url="$(cat "$theme_push_log" | tail -n 1 | jq -r '.theme.preview_url')"
-###preview_id="$(cat "$theme_push_log" | tail -n 1 | jq -r '.theme.id')"
-preview_id="125904814342"
-preview_url="$host/?preview_theme_id=$preview_id"
+log "theme_id: ${THEME_ID}"
+
+if [[ -n "${THEME_ID}"]]; then
+  step "Using existing theme ${THEME_ID}"
+  preview_id="${THEME_ID}"
+  preview_url="$host/?preview_theme_id=$preview_id"
+else
+  step "Creating development theme"
+  theme_push_log="$(mktemp)"
+  ###shopify theme push --development --json $theme_root > "$theme_push_log" && cat "$theme_push_log"
+  ###preview_url="$(cat "$theme_push_log" | tail -n 1 | jq -r '.theme.preview_url')"
+  ###preview_id="$(cat "$theme_push_log" | tail -n 1 | jq -r '.theme.id')"
+fi
 log "preview_url: $preview_url"
 log "preview_id: $preview_id" 
 

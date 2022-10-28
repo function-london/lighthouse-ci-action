@@ -13,6 +13,9 @@ inputs:
   store:
     description: '<domain>.myshopify.com URL'
     required: true
+  theme_id:
+    description: 'Theme ID of theme to test'
+    required: false
   password:
     description: 'Password-protected shop password'
     required: false
