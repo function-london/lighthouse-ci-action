@@ -163,7 +163,7 @@ log "Will run Lighthouse CI on $host"
 theme_id=${THEME_ID:-}
 log "theme_id: $theme_id"
 
-if [[ -n "$theme_id"]]; then
+if [[ -n "$theme_id" ]]; then
   step "Using existing theme $theme_id"
   preview_id="$theme_id"
   preview_url="$host/?preview_theme_id=$preview_id"
