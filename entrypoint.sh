@@ -167,7 +167,7 @@ log "theme_id: $theme_id"
 if [[ -n "$theme_id" ]]; then
   step "Using existing theme $theme_id"
   preview_id="$theme_id"
-  preview_url="$host/?preview_theme_id=$preview_id"
+  preview_url="$host/?preview_theme_id=$preview_id&_fd=0&pb=0"
 else
   step "Creating development theme"
   theme_push_log="$(mktemp)"
