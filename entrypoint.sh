@@ -16,7 +16,7 @@
 [[ -n "$INPUT_PRODUCT_HANDLE" ]]    && export SHOP_PRODUCT_HANDLE="$INPUT_PRODUCT_HANDLE"
 [[ -n "$INPUT_COLLECTION_HANDLE" ]] && export SHOP_COLLECTION_HANDLE="$INPUT_COLLECTION_HANDLE"
 [[ -n "$INPUT_THEME_ROOT" ]]        && export THEME_ROOT="$INPUT_THEME_ROOT"
-[[ -n "$INPUT_THEME_ID" ]]          && export THEME_ID="$INPUT_THEME_ID"
+[[ -n "$INPUT_THEME_ID" ]]          && export SHOP_THEME_ID="$INPUT_THEME_ID"
 
 # Authentication creds
 export SHOP_ACCESS_TOKEN="$INPUT_ACCESS_TOKEN"
@@ -163,7 +163,7 @@ log "Will run Lighthouse CI on $host"
 test=${SHOP_COLLECTION_HANDLE:-}
 log "test: $test"
 
-theme_id=${THEME_ID:-}
+theme_id=${SHOP_THEME_ID:-}
 log "theme_id: $theme_id"
 
 if [[ -n "$theme_id" ]]; then
