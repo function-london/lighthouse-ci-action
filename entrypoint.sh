@@ -160,6 +160,8 @@ theme_root="${THEME_ROOT:-.}"
 [[ -z ${SHOP_PASSWORD+x} ]] && shop_password='' || shop_password="$SHOP_PASSWORD"
 
 log "Will run Lighthouse CI on $host"
+test=${SHOP_COLLECTION_HANDLE:-}
+log "test: $test"
 
 theme_id=${THEME_ID:-}
 log "theme_id: $theme_id"
