@@ -160,6 +160,9 @@ theme_root="${THEME_ROOT:-.}"
 [[ -z ${SHOP_PASSWORD+x} ]] && shop_password='' || shop_password="$SHOP_PASSWORD"
 
 log "Will run Lighthouse CI on $host"
+
+action_theme_id= ${github.event.inputs.theme_id:-}
+log "action theme id: $action_theme_id"
 test=${SHOP_COLLECTION_HANDLE:-}
 log "test: $test"
 
