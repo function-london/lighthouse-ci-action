@@ -13,7 +13,7 @@ inputs:
   store:
     description: '<domain>.myshopify.com URL'
     required: true
-  preview_theme_id:
+  theme_id:
     description: 'Theme ID of theme to test'
     required: false
   password:
