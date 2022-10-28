@@ -202,6 +202,7 @@ fi
 query_string="?preview_theme_id=${preview_id}&_fd=0&pb=0"
 min_score_performance="${LHCI_MIN_SCORE_PERFORMANCE:-0.6}"
 min_score_accessibility="${LHCI_MIN_SCORE_ACCESSIBILITY:-0.9}"
+query_string="?_fd=0"
 
 cat <<- EOF > lighthouserc.yml
 ci:
