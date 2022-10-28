@@ -161,8 +161,6 @@ theme_root="${THEME_ROOT:-.}"
 
 log "Will run Lighthouse CI on $host"
 
-action_theme_id= ${{ inputs.theme_id }}
-log "action theme id: $action_theme_id"
 test=${SHOP_COLLECTION_HANDLE:-}
 log "test: $test"
 
