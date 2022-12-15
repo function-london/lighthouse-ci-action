@@ -14,7 +14,13 @@ inputs:
     description: '<domain>.myshopify.com URL'
     required: true
   theme_id:
+    description: 'Legacy Theme ID of theme to test, deprecated in favour of default_theme_id and workflow_theme_id'
+    required: false
+  default_theme_id:
     description: 'Theme ID of theme to test'
+    required: false
+  workflow_theme_id:
+    description: 'Theme ID of theme to test, will overwrite default_theme_id'
     required: false
   password:
     description: 'Password-protected shop password'
