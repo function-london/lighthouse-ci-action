@@ -149,15 +149,6 @@ YAML
 export CI=1
 export SHOPIFY_SHOP="${SHOP_STORE#*(https://|http://)}"
 
-if [[ -n "$SHOP_ACCESS_TOKEN" ]]; then
-  export SHOPIFY_PASSWORD="$SHOP_ACCESS_TOKEN"
-elif [[ -n "$SHOP_APP_PASSWORD" ]]; then
-  export SHOPIFY_PASSWORD="$SHOP_APP_PASSWORD"
-else
-  #This does not seem to be used anywhere so default to empty if not provided by repository secret
-  export SHOPIFY_PASSWORD=""
-fi
-
 ###shopify login
 
 host="https://${SHOP_STORE#*(https://|http://)}"
